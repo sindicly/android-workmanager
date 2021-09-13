@@ -97,7 +97,7 @@ class BlurViewModel(application: Application) : ViewModel() {
             .build()
 
         // Add WorkRequest to save the image to the filesystem
-        val save = OneTimeWorkRequestBuilder<SaveImageToFileWorker>()
+        val save = OneTimeWorkRequestBuilder<SaveImageToFileWorker>()//当设备不充电时，应该仅在您插入设备后才会执行 SaveImageToFileWorker
             .setConstraints(constraints)
             .addTag(TAG_OUTPUT)
             .build()
